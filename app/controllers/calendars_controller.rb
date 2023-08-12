@@ -2,7 +2,7 @@ class CalendarsController < ApplicationController
 
   # １週間のカレンダーと予定が表示されるページ
   def index
-    getWeek
+    getweek
     @plan = Plan.new
   end
 
@@ -39,7 +39,7 @@ class CalendarsController < ApplicationController
       if #「wday_numが7以上の場合」という条件式
         wday_num = wday_num -7
       end
-      
+
       days = { month: (@todays_date + x).month, date: (@todays_date+x).day, plans: today_plans}
       @week_days.push(days)
     end
